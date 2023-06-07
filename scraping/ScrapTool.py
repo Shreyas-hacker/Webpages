@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 
-class ScrapTool:
+class ScrapTool:   
     def visit_url(self,website_url):
         '''
         Visit URL. Download the Content. Initialize the beautifulsoup object. Call parsing methods. Return Series object.
