@@ -20,17 +20,20 @@ class ScrapTool:
         #Set up Selenium webdriver
         PATH = 'C:/Users/User01/Downloads/chromedriver_win32/chromedriver.exe'
 
-        # Set up Chrome options
-        chrome_options = Options()
-        chrome_options.add_argument("--headless")  # Run the browser in headless mode
-
         # Initialize the Chrome webdriver and pass the Chrome options
         service = Service(PATH)
-        driver = webdriver.Chrome(service = service, options = chrome_options)
+        driver = webdriver.Chrome(service = service)
 
         #Load website
         driver.get(website_url)
 
+        #Handle captcha
+        captcha = None
+        try:
+            captcha = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.recaptcha-checkbox-border")))
+        except:
+            pass
+        
         # Check if the cookie consent button is present
         cookie_button = None
         try:
