@@ -72,4 +72,4 @@ def website_prediction(website,model):
         print("Connection Timeout")
 
 
-website_prediction('https://cardingleaks.ws/',model)
+website_prediction('https://carding.store/',model)
