@@ -18,26 +18,22 @@ class ScrapTool:
         Visit URL. Download the Content. Initialize the beautifulsoup object. Call parsing methods. Return Series object.
         '''
         #Set up Selenium webdriver
-        PATH = 'C:/Users/User01/Downloads/chromedriver_win32/chromedriver.exe'
+        PATH = 'C:/Users/shrey/Downloads/chromedriver_win32 (1)/chromedriver.exe'
 
+        # Set the Chrome webdriver options
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
         # Initialize the Chrome webdriver and pass the Chrome options
         service = Service(PATH)
-        driver = webdriver.Chrome(service = service)
+        driver = webdriver.Chrome(service = service, options = chrome_options)
 
         #Load website
         driver.get(website_url)
-
-        #Handle captcha
-        captcha = None
-        try:
-            captcha = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.recaptcha-checkbox-border")))
-        except:
-            pass
         
         # Check if the cookie consent button is present
         cookie_button = None
         try:
-            cookie_button = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "cookie-consent-button")))
+            cookie_button = WebDriverWait(driver, 15).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "cookie-consent-button")))
         except:
             pass
 
