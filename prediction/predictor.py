@@ -1,4 +1,4 @@
-from scraping import ScrapTool
+from ScrapTool import ScrapTool
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -42,7 +42,7 @@ def cleaning_text(text):
     text = lemmatize_words(text)
     text = ' '.join(text)
     vector = tf_id_vectorizer.transform([text])
-    vector = chi2_selector.transform(vector)
+    # vector = chi2_selector.transform(vector)
     vector = vector.toarray()
     return vector
 
