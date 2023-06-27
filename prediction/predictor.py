@@ -1,4 +1,5 @@
 from ScrapTool import ScrapTool
+from darkwebScrapper import Scraper
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -50,8 +51,10 @@ def cleaning_text(text):
 def website_prediction(website,model):
     scrapTool = ScrapTool()
     try:
-        web = dict(scrapTool.visit_url(website))
-        text = cleaning_text(web['website_text'])
+        # web = dict(scrapTool.visit_url(website))
+        # text = cleaning_text(web['website_text'])
+        web = Scraper(website)
+        text = cleaning_text(web)
         prediction = model.predict(text)
         web_cat = prediction[0]
         category = ""
@@ -82,4 +85,4 @@ def website_prediction(website,model):
         print("Connection Timeout")
 
 
-website_prediction('https://www.evilangel.com/',model)
+website_prediction('http://oyioathjz27447gbzevezh3wnqp4l2likld2i22e6ttu5yjtoutmzqid.onion',model)
