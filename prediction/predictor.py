@@ -65,6 +65,16 @@ def website_prediction(website,model):
             category = 'E-commerce'
         elif web_cat == 4:
             category = 'Financial Crime'
+        elif web_cat == 5:
+            category = "Forums"
+        elif web_cat == 6:
+            category = "Law and Government"
+        elif web_cat == 7:
+            category = "Narcotics"
+        elif web_cat == 8:
+            category = "News"
+        elif web_cat == 9:
+            category = "Social Media"
         print(f'The website is under the category of {category}')
 
     except Exception as e:
@@ -72,4 +82,4 @@ def website_prediction(website,model):
         print("Connection Timeout")
 
 
-website_prediction('https://carding.store/',model)
+website_prediction('https://www.evilangel.com/',model)

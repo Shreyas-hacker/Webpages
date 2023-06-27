@@ -18,7 +18,7 @@ class ScrapTool:
         Visit URL. Download the Content. Initialize the beautifulsoup object. Call parsing methods. Return Series object.
         '''
         #Set up Selenium webdriver
-        PATH = 'C:/Users/shrey/Downloads/chromedriver_win32 (1)/chromedriver.exe'
+        PATH = 'C:/Users/User01/Downloads/chromedriver_win32/chromedriver.exe'
 
         # Set the Chrome webdriver options
         chrome_options = Options()
