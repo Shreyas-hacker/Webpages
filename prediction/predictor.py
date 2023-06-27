@@ -1,4 +1,4 @@
-from ScrapTool import ScrapTool
+from scraping import ScrapTool
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
