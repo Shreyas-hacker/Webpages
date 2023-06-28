@@ -34,7 +34,7 @@ def lemmatize_words(text):
 #cleaning text and preprocessing
 def cleaning_text(text):
     text = text.lower()
-    # text = re.sub(r'http\S+',' ',text)
+    text = re.sub(r'http\S+',' ',text)
     text = re.sub(r'[^\w\s]',' ',text)
     text = re.sub(r'_+',' ',text)
     text = re.sub(r'\d+','',text)
@@ -46,8 +46,8 @@ def cleaning_text(text):
     # text = [lem.lemmatize(word) for word in text]
     text = ' '.join(text)
     vector = tf_id_vectorizer.transform([text])
-    # # vector = chi2_selector.transform(vector)
-    # vector = vector.toarray()
+    vector = chi2_selector.transform(vector)
+    vector = vector.toarray()
     return vector
 
 
