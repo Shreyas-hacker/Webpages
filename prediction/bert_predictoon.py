@@ -77,7 +77,7 @@ def clean_text(text):
     text = ' '.join(text)
     return text
 
-website = "http://gfilubpkimogfzsrsdg6l3vspc4wbvjwzsnt26wpzvvcbanxcuyg3lad.onion/"
+website = "http://wq7ehsq6zt4hlkj5jey2gbuxldz7gyvophczyudkozw5vajdtxcw2aad.onion"
 text = Scraper(website,dark_web=True)
 text = clean_text(text=text)
 print(text)
