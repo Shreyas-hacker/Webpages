@@ -14,10 +14,7 @@ def Scraper(url):
     session = get_tor_session()
     print("Getting..,",url)
     result = session.get(url).text
+    soup = BeautifulSoup(result, features='html.parser')
+    text = soup.get_text()
 
-    return result
-
-html = Scraper('http://oyioathjz27447gbzevezh3wnqp4l2likld2i22e6ttu5yjtoutmzqid.onion/index.html')
-soup = BeautifulSoup(html, features='html.parser')
-text = soup.get_text()
-print(text)
+    return text

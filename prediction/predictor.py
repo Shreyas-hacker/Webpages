@@ -34,17 +34,20 @@ def lemmatize_words(text):
 #cleaning text and preprocessing
 def cleaning_text(text):
     text = text.lower()
+    # text = re.sub(r'http\S+',' ',text)
     text = re.sub(r'[^\w\s]',' ',text)
+    text = re.sub(r'_+',' ',text)
     text = re.sub(r'\d+','',text)
     text = re.sub(r'\s+',' ',text)   
     text = word_tokenize(text)
     text = [word for word in text if word not in stop_words]
-    text = [word for word in text if len(word)>2]
+    text = [word for word in text if len(word)>3]
     text = lemmatize_words(text)
+    # text = [lem.lemmatize(word) for word in text]
     text = ' '.join(text)
     vector = tf_id_vectorizer.transform([text])
-    # vector = chi2_selector.transform(vector)
-    vector = vector.toarray()
+    # # vector = chi2_selector.transform(vector)
+    # vector = vector.toarray()
     return vector
 
 
@@ -85,4 +88,4 @@ def website_prediction(website,model):
         print("Connection Timeout")
 
 
-website_prediction('http://oyioathjz27447gbzevezh3wnqp4l2likld2i22e6ttu5yjtoutmzqid.onion',model)
+website_prediction('http://yxkdzgrty3hqlhpr37sqma5yujlsmcxtrfjgqxyms5cwnmirz62ck7qd.onion',model)
