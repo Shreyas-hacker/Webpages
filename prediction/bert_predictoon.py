@@ -80,7 +80,6 @@ def clean_text(text):
 website = "http://wq7ehsq6zt4hlkj5jey2gbuxldz7gyvophczyudkozw5vajdtxcw2aad.onion"
 text = Scraper(website,dark_web=True)
 text = clean_text(text=text)
-print(text)
 tokenizer = BertTokenizer.from_pretrained("C:/Users/shrey/OneDrive - Nanyang Technological University/Desktop/Webpages/final/")
 inputs = tokenizer(text,truncation=True,return_tensors="pt",padding=True)
 model = BertForSequenceClassification.from_pretrained("C:/Users/shrey/OneDrive - Nanyang Technological University/Desktop/Webpages/final/")
