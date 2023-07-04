@@ -60,13 +60,15 @@ def vectorize_text(text,tf_id_vectorizer,chi2_selector):
 
 def website_prediction(website,dark_web):
     try:
-        if dark_web:
-            web = Scraper(website,dark_web=dark_web)
-            text = cleaning_text(web)
-        else:
-            scrapTool = ScrapTool()
-            web = dict(scrapTool.visit_url(website))
-            text = cleaning_text(web['website_text'])
+        # if dark_web:
+        #     web = Scraper(website,dark_web=dark_web)
+        #     text = cleaning_text(web)
+        # else:
+        #     scrapTool = ScrapTool()
+        #     web = dict(scrapTool.visit_url(website))
+            # text = cleaning_text(web['website_text'])
+        web = Scraper(website,dark_web=dark_web)
+        text = cleaning_text(web)
         vector = vectorize_text(text,root_tf_id_vectorizer,root_chi2_selector)
         prediction = root_model.predict(vector)
         web_cat = prediction[0]
@@ -109,23 +111,24 @@ def website_prediction(website,dark_web):
         print("Connection Timeout")
 
 websites = [
-    ('https://www.nulled.to/topic/1513852-5k-usa-ssndobnameemailphoneaddress/page-2',False),
-    ('https://www.nulled.to/topic/705130-wwwtextverifiedcom-phone-verifications-usa-non-voip-voicesmstext-rental-numbers/page-74',False),
-    ('https://www.nulled.to/topic/1203670-800-ebony-videos-and-nudes-of-ig-and-onlyfans-content-dropbox-18/page-18',False),
-    ('https://www.nulled.to/topic/1513339-config-help/',False),
-    ('https://www.nulled.to/topic/1512944-selling-chipotle-codes/',False),
-    ('https://www.nulled.to/topic/1511097-encrypting-a-hard-drive/',False),
-    ('https://www.nulled.to/topic/1511677-experienced-coders-needed-golang-python-telegram-bot-api/',False),
-    ('https://www.nulled.to/topic/628103-free-wifi-password-revealer-100-clean/page-298',False),
-    ('https://www.nulled.to/topic/628103-free-wifi-password-revealer-100-clean/page-298',False),
-    ('https://www.nulled.to/topic/1510979-151x-freshly-cracked-steam-accounts-captured-with-verified-or-not-wallet-balance-games-level-badge-inventory-etc/',False),
-    ('https://www.nulled.to/topic/1509517-extremely-huge-400tb-collection-of-leaked-paid-udemy-courses-get-everything-here/',False),
-    ('https://www.nulled.to/topic/1509968-do-combolists-contain-real-emailpassword-pairs-from-leaked-dbs/',False),
-    ('https://www.nulled.to/topic/990881-tutorial-bypass-the-hidden-content-feature-on-nulled/page-441',False),
-    ('https://www.nulled.to/topic/1468887-mega-154gb-hidden-cam-videos-private-leaked-videos-2023-updated/page-85',False),
-    ('https://vxug.fakedoma.in/archive/VxHeaven/lib/index.html@show_abstract=ads01.html',False)
+    ('https://sinister.ly/Thread-Best-way-to-SE-a-computer?pid=1243277',False),
+    ('https://altenens.is/threads/free-how-to-get-valorant-giftcards-30minutes-proof.1693191/page-33',False),
+    ('https://sinister.ly/Thread-What-Cryptocurrency-Has-The-Highest-Potential-In-The-Upcoming-Years',False),
+    ('https://sinister.ly/Thread-Leak-%E2%9C%94%EF%B8%8F-UPDATED-EXODUS-2023-NFT-ETH-DRAINER?pid=1242231',False),
+    ('https://sinister.ly/Thread-Leak-Earn-with-php-Script-Bitcoin?pid=1239921&mode=threaded',False),
+    ('https://sinister.ly/Thread-Btc-Trading?pid=1242782',False),
+    ('https://sinister.ly/Thread-CryptoChanger-to-INSTANT-CRYPTO%E2%87%84CRYPTO-EXCHANGE-THE-LOWEST-FEE-0-5-No-KYC?pid=1240869',False),
+    ('https://sinister.ly/Thread-CryptoChanger-to-INSTANT-CRYPTO%E2%87%84CRYPTO-EXCHANGE-THE-LOWEST-FEE-0-5-No-KYC?pid=1239850',False),
+    ('https://thejavasea.me/threads/%E2%9D%A4%EF%B8%8Fmia-malkova-onlyfans-leaks-site-rip%E2%9D%A4%EF%B8%8F.122220/',False),
+    ('https://thejavasea.me/threads/%E2%9D%A4%EF%B8%8Faidra-fox-onlyfans-leaks-ppvs%E2%9D%A4%EF%B8%8F.122224/',False),
+    ('https://thejavasea.me/threads/%E2%9D%A4%EF%B8%8Foliviamaebae-alliecatt-onlyfans-leaks-ppvs%E2%9D%A4%EF%B8%8F.122225/',False),
+    ('https://sinister.ly/Thread-Method-to-crack-a-email-password--187151?pid=1238969',False),
+    ('https://mycorporateinfo.com/business/kharepaten-plantations-private-limited/documents',False),
+    ('https://mycorporateinfo.com/business/money-care-finanz-limited/in-depth',False),
+    ('https://sinister.ly/Thread-CryptoChanger-to-INSTANT-CRYPTO%E2%87%84CRYPTO-EXCHANGE-THE-LOWEST-FEE-0-5-No-KYC?pid=1228681',False)
 ]
 
+count = 0
 for website in websites:
     print(website[0])
     website_prediction(website[0],website[1])
