@@ -6,6 +6,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
+from darkwebScrapper import Scraper
 
 stop_words = stopwords.words('english')
 lem = WordNetLemmatizer()
@@ -46,3 +47,20 @@ def cleaning(text):
     
     return vector
 
+
+def prediction(website,dark_web):
+    try:
+        website_text = Scraper(website,dark_web)
+        vector = cleaning(website_text)
+        prediction = loaded_model.predict(vector)
+        pred_cat = prediction[0]
+        category = ""
+        if pred_cat == 0:
+            category = 'Computers and Technology'
+        elif pred_cat == 1:
+            category = 'Cryptocurrency'
+        else:
+            category = 'Cyber Security'
+        print(f'The website is under the category of {category}')
+    except Exception as e:
+        print("Something went wrong!")
