@@ -14,7 +14,7 @@ stop_words = stopwords.words('english')
 root_model = pickle.load(open('model_MNB/model/RootModel.sav','rb'))
 root_tf_id_vectorizer = pickle.load(open(vectorizer,'rb'))
 root_chi2_selector = pickle.load(open(selector,'rb'))
-comp_model = pickle.load(open('Hierarchal model/Computer/model/CompSubCat_SVM.sav','rb'))
+comp_model = pickle.load(open('Hierarchal model/Computer/model/CompSubCat_MNB.sav','rb'))
 comp_vectorizer = pickle.load(open('Hierarchal model/Computer/model/vectorizer.pkl','rb'))
 comp_chi2_selector = pickle.load(open('Hierarchal model/Computer/model/selector.pkl','rb'))
 
