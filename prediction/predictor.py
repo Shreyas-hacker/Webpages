@@ -110,21 +110,29 @@ def website_prediction(website,dark_web):
         print("Connection Timeout")
 
 websites = [
-    ('https://sinister.ly/Thread-Best-way-to-SE-a-computer?pid=1243277',False),
-    ('https://altenens.is/threads/free-how-to-get-valorant-giftcards-30minutes-proof.1693191/page-33',False),
-    ('https://sinister.ly/Thread-What-Cryptocurrency-Has-The-Highest-Potential-In-The-Upcoming-Years',False),
-    ('https://sinister.ly/Thread-Leak-%E2%9C%94%EF%B8%8F-UPDATED-EXODUS-2023-NFT-ETH-DRAINER?pid=1242231',False),
-    ('https://sinister.ly/Thread-Leak-Earn-with-php-Script-Bitcoin?pid=1239921&mode=threaded',False),
-    ('https://sinister.ly/Thread-Btc-Trading?pid=1242782',False),
-    ('https://sinister.ly/Thread-CryptoChanger-to-INSTANT-CRYPTO%E2%87%84CRYPTO-EXCHANGE-THE-LOWEST-FEE-0-5-No-KYC?pid=1240869',False),
-    ('https://sinister.ly/Thread-CryptoChanger-to-INSTANT-CRYPTO%E2%87%84CRYPTO-EXCHANGE-THE-LOWEST-FEE-0-5-No-KYC?pid=1239850',False),
-    ('https://thejavasea.me/threads/%E2%9D%A4%EF%B8%8Fmia-malkova-onlyfans-leaks-site-rip%E2%9D%A4%EF%B8%8F.122220/',False),
-    ('https://thejavasea.me/threads/%E2%9D%A4%EF%B8%8Faidra-fox-onlyfans-leaks-ppvs%E2%9D%A4%EF%B8%8F.122224/',False),
-    ('https://thejavasea.me/threads/%E2%9D%A4%EF%B8%8Foliviamaebae-alliecatt-onlyfans-leaks-ppvs%E2%9D%A4%EF%B8%8F.122225/',False),
-    ('https://sinister.ly/Thread-Method-to-crack-a-email-password--187151?pid=1238969',False),
-    ('https://mycorporateinfo.com/business/kharepaten-plantations-private-limited/documents',False),
-    ('https://mycorporateinfo.com/business/money-care-finanz-limited/in-depth',False),
-    ('https://sinister.ly/Thread-CryptoChanger-to-INSTANT-CRYPTO%E2%87%84CRYPTO-EXCHANGE-THE-LOWEST-FEE-0-5-No-KYC?pid=1228681',False)
+    # ('http://vtgk7uzp7v2ba2wiv2m5diuklzszgcparux5cjxvjlt5mqaoehwjqxad.onion/',True),
+    # ('http://zohlm7ahjwegcedoz7lrdrti7bvpofymcayotp744qhx6gjmxbuo2yid.onion/',True),
+    # ('http://lockbit7z2mmiz3ryxafn5kapbvbbiywsxwovasfkgf5dqqp5kxlajad.onion',True),
+    # ('http://rnsm777cdsjrsdlbs4v5qoeppu3px6sb2igmh53jzrx7ipcrbjz5b2ad.onion',True),
+    # ('http://hacktowns3sba2xavxecm23aoocvzciaxirh3vekg2ovzdjgjxedfvqd.onion',True),
+    # ('http://7ukmkdtyxdkdivtjad57klqnd3kdsmq6tp45rrsxqnu76zzv3jvitlqd.onion',True),
+    # ('http://a6jcl5br7x77owlyx7fn2volfocesqbyddqajcatnfqebzzwbmejtbid.onion',True),
+    # ('http://p66slxmtum2ox4jpayco6ai3qfehd5urgrs4oximjzklxcol264driqd.onion',True),
+    # ('http://lockbitapt5x4zkjbcqmz6frdhecqqgadevyiwqxukksspnlidyvd7qd.onion',True),
+    # ('http://blog6zw62uijolee7e6aqqnqaszs3ckr5iphzdzsazgrpvtqtjwqryid.onion',True),
+    # ('http://breachdbsztfykg2fdaq2gnqnxfsbj5d35byz3yzj73hazydk4vq72qd.onion',True),
+    # ('http://uwcryspionvholmkfxoqt2xns5mvnct34ytacugxtqpqrnka2oqm6kqd.onion',True),
+    # ('http://5v3hgztpzes4mu3ii4mmmirufahwhsux6rgmwcmeclkedonirvpa5yad.onion',True),
+    # ('http://awoqb72p5kqcxtrsgoftnegnj6r33ikvq4n2fnhvdzsmuf4vzg26lcad.onion',True),
+    # ('http://zcashfgzdzxwiy7yq74uejvo2ykppu4pzgioplcvdnpmc6gcu5k6vwyd.onion',True),
+    # ('http://4p6i33oqj6wgvzgzczyqlueav3tz456rdu632xzyxbnhq4gpsriirtqd.onion',True),
+    # ('http://4wmicvgfju43ejudk2km3a7jhkwyewtgwwxbttcquca4fm3tilmtocyd.onion',True),
+    # ('http://5xtktk7q63l533qiiupxc5nvnivzzn4mvonwaajl6vdp5p7bjatkcbad.onion',True),
+    # ('http://7bw24ll47y7aohhkrfdq2wydg3zvuecvjo63muycjzlbaqlihuogqvyd.onion',True),
+    ('http://3el34jbxuwiigfzf4o75evttgilswlp7qdwcap6rfxi3eh27dzenaaqd.onion',True),
+    ('https://cardvilla.cc/',False),
+    ('http://wannab666qqm2nhtkqmwwps3x2wu2bv33ayvmf4jyb6g3ibmitdzkcyd.onion/',True),
+
 ]
 
 count = 0
