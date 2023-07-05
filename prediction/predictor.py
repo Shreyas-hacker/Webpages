@@ -60,15 +60,14 @@ def vectorize_text(text,tf_id_vectorizer,chi2_selector):
 
 def website_prediction(website,dark_web):
     try:
-        # if dark_web:
-        #     web = Scraper(website,dark_web=dark_web)
-        #     text = cleaning_text(web)
-        # else:
-        #     scrapTool = ScrapTool()
-        #     web = dict(scrapTool.visit_url(website))
-            # text = cleaning_text(web['website_text'])
-        web = Scraper(website,dark_web=dark_web)
-        text = cleaning_text(web)
+        if dark_web:
+            web = Scraper(website,dark_web=dark_web)
+            text = cleaning_text(web)
+        else:
+            scrapTool = ScrapTool()
+            web = dict(scrapTool.visit_url(website))
+            text = cleaning_text(web['website_text'])
+        
         vector = vectorize_text(text,root_tf_id_vectorizer,root_chi2_selector)
         prediction = root_model.predict(vector)
         web_cat = prediction[0]
