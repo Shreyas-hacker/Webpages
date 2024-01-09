@@ -3,7 +3,7 @@ import pandas as pd
 
 # open text file to read it
 data_list = []
-with open("../darknet.txt", 'r', encoding='utf-8') as darknet:
+with open("../Darknet Data/darknet.txt", 'r', encoding='utf-8') as darknet:
     #iterate over each line in the file
     for line in darknet:
         data = json.loads(line)
@@ -13,7 +13,7 @@ with open("../darknet.txt", 'r', encoding='utf-8') as darknet:
             data_dict['summary'] = ''
         data_list.append((data_dict['url'],data_dict['title'],data_dict['body_stripped'],data_dict['summary']))
 
-#convert list of tuples to dataframe
+# convert list of tuples to dataframe
 df = pd.DataFrame(data_list, columns=['url','title','body_stripped','summary'])
 # save the dataframe to csv
 df.to_csv('darknet.csv', index=False)
